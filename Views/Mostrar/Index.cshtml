@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Datos de Cuenta</title>
+</head>
+<body>
+    <h2>Datos de la Cuenta</h2>
+    <form id="formularioConsulta">
+        <div>
+            <label for="consultaId">ID de Cuenta:</label>
+            <input type="text" id="consultaId" name="consultaId">
+        </div>
+        <button type="button" onclick="consultarDatos()">Consultar</button>
+    </form>
+
+    <hr>
+
+    <h2>Datos de la Cuenta</h2>
+    <div id="datosCuenta">
+        <p><strong>Nombre del Titular:</strong> <span id="nombreTitular"></span></p>
+        <p><strong>Correo Electrónico:</strong> <span id="email"></span></p>
+        <p><strong>Tipo de Cuenta:</strong> <span id="tipoCuenta"></span></p>
+        <p><strong>Saldo:</strong> <span id="saldo"></span></p>
+    </div>
+        
+</body>
+</html>

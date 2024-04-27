@@ -10,25 +10,25 @@ using Mibanco2.Data;
 
 public class CuentaController : Controller
 {
-            private readonly ILogger<CuentaController> _logger;
-        private readonly ApplicationDbContext _context;
+    private readonly ILogger<CuentaController> _logger;
+    private readonly ApplicationDbContext _context;
 
 
-        public CuentaController(ILogger<CuentaController> logger,ApplicationDbContext context)
-        {
-            _logger = logger;
-            _context = context;
-        }
+    public CuentaController(ILogger<CuentaController> logger, ApplicationDbContext context)
+    {
+        _logger = logger;
+        _context = context;
+    }
 
     // GET: Cuenta/Registro
     /*public ActionResult Registro()
     {
         return View();
     }   */
-      public IActionResult Index()
-        {
-            return View();
-        }
+    public IActionResult Index()
+    {
+        return View();
+    }
 
     // POST: Cuenta/Registro
     [HttpPost]
@@ -36,12 +36,12 @@ public class CuentaController : Controller
     {
         _logger.LogDebug("Ingreso a Enviar Mensaje");
 
-            //Se registran los datos del objeto a la base datos
-            _context.Add(objcuenta);
-            _context.SaveChanges();
+        //Se registran los datos del objeto a la base datos
+        _context.Add(objcuenta);
+        _context.SaveChanges();
 
-            ViewData["Message"] = "Se registro el contacto";
-            return View("Index");
+        ViewData["Message"] = "Se registro el contacto";
+        return View("Index");
     }
 
     // GET: Cuenta/RegistroExitoso
