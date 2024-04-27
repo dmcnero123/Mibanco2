@@ -1,0 +1,43 @@
+@model Mibanco2.Models.Cuenta
+@{
+    ViewData["Title"] = "Cuenta";
+}
+
+
+
+<h2>Formulario de Registro de Cuenta:</h2>
+
+@using (Html.BeginForm("Registro", "Cuenta", FormMethod.Post))
+{
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    
+    <div class="form-group">
+        <label asp-for="NombreTitular"></label>
+        <input asp-for="NombreTitular" class="form-control" />
+        <span asp-validation-for="NombreTitular" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="TipoCuenta"></label>
+        <select asp-for="TipoCuenta" class="form-control">
+            <option value="Cuenta Corriente">Cuenta Corriente</option>
+            <option value="Cuenta de Ahorros">Cuenta de Ahorros</option>
+            <option value="Otro">Otro</option>
+        </select>
+        <span asp-validation-for="TipoCuenta" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="SaldoInicial"></label>
+        <input asp-for="SaldoInicial" class="form-control" />
+        <span asp-validation-for="SaldoInicial" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Enviar</button>
+}
